@@ -32,7 +32,7 @@ namespace OdeToFood.Controllers
             p.Quantity = prod.Quantity;
             p.Type = prod.Type;
             var newInventory = _inventory.AddToInventory(p);
-            return View("Index", newInventory);//.OrderBy(x=>x.Name).ToList());
+            return RedirectToAction("Index", newInventory);
         }
         [HttpGet]
         public IActionResult Edit(string name)
@@ -49,12 +49,12 @@ namespace OdeToFood.Controllers
             p.Quantity = prod.Quantity;
             p.Type = prod.Type;
             var newInventory = _inventory.AddToInventory(p);
-            return View("Index", newInventory.OrderBy(x=>x.Name).ToList());
+            return RedirectToAction("Index", newInventory);
         }
         public IActionResult Delete(string name)
         {
             var newInventory = _inventory.DeleteFromInventory(name);
-            return View("Index",newInventory);
+            return RedirectToAction("Index",newInventory);
         }
 
     }

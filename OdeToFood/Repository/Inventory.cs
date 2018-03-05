@@ -37,7 +37,7 @@ namespace OdeToFood.Repository
         {
             var prod = _inventory.Find(x => x.Name == name);
             _inventory.Remove(prod);
-            return _inventory;
+            return _inventory.OrderBy(x=>x.Name == name).ToList();
         }
 
         public Product FindItem(string name)
