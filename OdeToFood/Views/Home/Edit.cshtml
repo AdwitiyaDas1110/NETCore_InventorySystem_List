@@ -1,0 +1,22 @@
+﻿@model OdeToFood.Models.Product
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Inventory System : Edit Item</title>
+</head>
+<body>
+    <h1>
+       Edit Item 
+    </h1>
+    <form method="post">
+        <label>Name</label>
+        <input name="Name" value="@Model.Name" />
+        <label>Price</label>
+        <input name="Price" value="@Model.Price" />
+        <label>Quantity</label>
+        <input name="Quantity" value="@Model.Quantity" />
+        <label>Type</label>
+        <input name="Type" value="@Model.Type" />
+        <input type="submit" name="save" value="Save" />
+    </form>
+</body>
+</html>
